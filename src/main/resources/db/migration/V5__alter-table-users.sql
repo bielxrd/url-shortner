@@ -1,0 +1,4 @@
+INSERT INTO ROLES (name) VALUES ('ADMIN'), ('USER'), ('PREMIUM');
+
+ALTER TABLE users ADD COLUMN roles_id INT NOT NULL;
+ALTER TABLE users ADD CONSTRAINT fk_roles_id FOREIGN KEY (roles_id) REFERENCES roles(id);
